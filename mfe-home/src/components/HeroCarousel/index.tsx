@@ -17,7 +17,6 @@ const HeroCarousel = ({ children }: React.PropsWithChildren) => {
                 loop={true}
                 navigation
                 pagination={{ clickable: true }}
-                lazy={true}
             >
                 <div className="category-slider" data-widget="1">
                     {Array(5).fill(null).map((item, index) => (
