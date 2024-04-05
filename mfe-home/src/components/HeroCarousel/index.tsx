@@ -1,8 +1,7 @@
 import React from 'react';
-import { Fragment } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Lazy } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -18,6 +17,7 @@ const HeroCarousel = ({ children }: React.PropsWithChildren) => {
                 loop={true}
                 navigation
                 pagination={{ clickable: true }}
+                lazy={true}
             >
                 <div className="category-slider" data-widget="1">
                     {Array(5).fill(null).map((item, index) => (
@@ -26,17 +26,15 @@ const HeroCarousel = ({ children }: React.PropsWithChildren) => {
                                 <div className={styles['slide-content']}>
                                     Hero carousel from home mfe
                                 </div>
-                                <picture className="d-none d-md-block">
-                                    <Image
-                                        className={"hero-banner-block__img hero-banner-block__img-new"}
-                                        alt='Hero banner'
-                                        src={"https://picsum.photos/1920/600?random=" + (index + 1)}
-                                        unoptimized
-                                        loading="eager"
-                                        width={1920}
-                                        height={610}
-                                    />
-                                </picture>
+                                <Image
+                                    className={"hero-banner-block__img hero-banner-block__img-new"}
+                                    alt='Hero banner'
+                                    src={"https://picsum.photos/1920/600?random=" + (index + 1)}
+                                    unoptimized
+                                    loading="lazy"
+                                    width={1920}
+                                    height={610}
+                                />
                             </div>
                         </SwiperSlide>
                     ))}
