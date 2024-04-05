@@ -1,0 +1,13 @@
+.root {
+    display: flex;
+    justify-content: center;
+    background: var(--bc-color-primary, #1f3489);
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    height: 60px;
+    line-height: 60px;
+}
+.container {
+    max-width: var(--bc-max-width-app, 1440px);
+}
