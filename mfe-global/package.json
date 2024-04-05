@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev --port 3001",
+    "dev": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
     "build": "cross-env NEXT_PRIVATE_LOCAL_WEBPACK=true next build",
-    "start": "next start --port 3001",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
