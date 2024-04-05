@@ -1,7 +1,13 @@
 import _ from 'lodash'
 import styles from './HeaderBanner.module.scss';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
 const HeaderBanner = () => {
-    return <div className={styles.root}>
+    const background = useSelector((state: RootState) => state.global.background);
+    return <div
+        className={styles.root}
+        style={{background}}
+    >
         <div className={styles.container}>
             BANNER FROM GLOBAL MFE 
         </div>

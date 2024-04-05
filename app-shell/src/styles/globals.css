@@ -1,4 +1,5 @@
 :root {
+  --bc-color-primary: #1f3489;
   --max-width: 1400px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -82,6 +83,8 @@
 html,
 body {
   max-width: 100vw;
+  min-height: 100vh;
+  padding: 8px;
   overflow-x: hidden;
 }
 
@@ -104,4 +107,16 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+button.load-basket {
+  text-transform: uppercase;
+  padding: 5px 15px;
+  background-color: var(--bc-color-primary, #1f3489);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+img {
+  max-width: 100vw;
 }

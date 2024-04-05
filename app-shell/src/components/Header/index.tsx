@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import styles from './Header.module.scss';
 import { lazy } from 'react';
+import Card from '../Card';
 import ErrorBoundary from '@/utils/ErrorBoundary';
 // import HeaderBanner from 'GLOBAL/HeaderBanner'"
 // const HeaderBanner = dynamic(() => import('GLOBAL/HeaderBanner'), { ssr: true/false });
@@ -53,12 +54,15 @@ const Header = () => {
         {/* <div>BREADCRUMB FROM T1</div>
         <Breadcrumb {...props} />
         <Minicart /> */}
-        <hr/>
-        <ErrorBoundary>
+        <Card
+            title='GLOBAL MFE'
+        >
+            <ErrorBoundary>
             <Suspense fallback={<div>Loading...</div>}>
                 <HeaderBanner />
             </Suspense>
           </ErrorBoundary>
+        </Card>
     </header>;
 }
 export default Header;

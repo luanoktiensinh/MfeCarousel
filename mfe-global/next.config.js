@@ -13,6 +13,7 @@ const nextConfig = withBundleAnalyzer({
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           './HeaderBanner': './src/components/Header/HeaderBanner',
+          './global-slide': './src/store/reducer.ts'
         },
         shared: {
           moment: {
@@ -23,6 +24,14 @@ const nextConfig = withBundleAnalyzer({
             singleton: false,
             requiredVersion: false,
           },
+          "@reduxjs/toolkit" : {
+            singleton: true,
+            eager: false,
+          },
+          "react-redux" : {
+            singleton: true,
+            eager: true,
+          }
         },
       }),
     );

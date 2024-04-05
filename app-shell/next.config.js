@@ -9,7 +9,6 @@ const remotes = isServer => {
   return {
     HOME: `HOME@${process.env.MFE_HOME_URL}/_next/static/${location}/remoteEntry.js`,
     GLOBAL: `LOCAL_GLOBAL@${process.env.MFE_GLOBAL_URL}/_next/static/${location}/remoteEntry.js`,
-    T1GLOBAL: `GLOBAL@https://t1-mfe-qa-b.eluxcdn.com/mfe/global/latest/_next/static/${location}/remoteEntry.js`,
     T1BASKET: `BASKET@https://t1-mfe-qa-b.eluxcdn.com/mfe/basket/latest/_next/static/${location}/remoteEntry.js`,
   };
 };
@@ -28,6 +27,14 @@ module.exports = withBundleAnalyzer({
             eager: true,
             requiredVersion: false,
           },
+          "@reduxjs/toolkit" : {
+            singleton: true,
+            eager: false,
+          },
+          "react-redux" : {
+            singleton: true,
+            eager: true,
+          }
         },
         extraOptions:{
           
