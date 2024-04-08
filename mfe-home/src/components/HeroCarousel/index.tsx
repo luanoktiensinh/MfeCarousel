@@ -5,9 +5,14 @@ import { Navigation, Pagination, Lazy } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import _ from 'lodash'
 import styles from './HeroCarousel.module.scss'
+
+import img1 from '@/images/pane-img1.jpg';
+import img2 from '@/images/pane-img2.jpg';
+import img3 from '@/images/pane-img3.jpg';
+import img4 from '@/images/pane-img4.jpg';
 const HeroCarousel = ({ children }: React.PropsWithChildren) => {
+    const imgArr = [img1, img2, img3, img4];
     return (
         <div>
             <Swiper
@@ -19,17 +24,16 @@ const HeroCarousel = ({ children }: React.PropsWithChildren) => {
                 pagination={{ clickable: true }}
             >
                 <div className="category-slider" data-widget="1">
-                    {Array(5).fill(null).map((item, index) => (
+                    {imgArr.map((item, index) => (
                         <SwiperSlide key={index} virtualIndex={index} className="hero-banner-block height-full in-homepage">
                             <div className={styles.slide}>
                                 <div className={styles['slide-content']}>
                                     Hero carousel from home mfe
                                 </div>
                                 <Image
-                                    className={"hero-banner-block__img hero-banner-block__img-new"}
+                                    className={"hero-banner-block__img hero-banner-block__img-new d-none"}
                                     alt='Hero banner'
-                                    src={"https://picsum.photos/1920/600?random=" + (index + 1)}
-                                    unoptimized
+                                    src={item}
                                     loading="lazy"
                                     width={1920}
                                     height={610}

@@ -45,4 +45,14 @@ module.exports = withBundleAnalyzer({
 
     return config;
   },
+  async rewrites() {
+    return [
+      {
+        // Matches any request that starts with /_next/static/media
+        source: '/_next/static/media/:path*',
+        // Rewrite them to the MFE server (adjust the port as necessary)
+        destination: 'https://mfe-carousel.vercel.app/_next/static/media/:path*',
+      },
+    ]
+  },
 });
